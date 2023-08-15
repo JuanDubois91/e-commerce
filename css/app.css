@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerBtnsCart {
+    display: flex;
+    justify-content: end;
+}
+
+.buttonCart {
+    margin-left: 5px;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+}
+
+.buttonCart--buy {
+    background-color: blue;
+    color: white;
+}
+
+.buttonCart--delete {
+    background-color: red;
+    color: white;
+}
+
+.table_container {
+    padding: 10px;
+    margin: 15px;
+}
+
+.containerTotalCart {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: end;
+    
+}
+
+.btn_action_cart--add {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 6px;
+    text-align: center;
+}
+
+.btn_action_cart--rest {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 8px;
+    text-align: center;
+}
