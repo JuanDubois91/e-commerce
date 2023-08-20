@@ -11,10 +11,12 @@ const containerCart = document.getElementById("containerCart");
 const totalCart = document.getElementById("total-cart");
 const btnAdd = document.getElementById("btn_add");
 const btnRest = document.getElementById("btn_rest");
+const radioFilter = document.querySelectorAll(".form-check-input");
 // const buttonBuy = document.getElementById("btn-buy");
 // const buttonDelete = document.getElementById("btn-delete");
 
 let shoppingCart = [];
+
 let menu = [
   {
     id: 0,
@@ -42,13 +44,49 @@ let menu = [
 
   {
     id: 2,
-    title: 'Desayuno light',
-    category: 'breakfast',
-    price: 10,
-    image: 'assets/img/breakfast/breakfast-light.jpg',
+    title: 'Sandwich doble',
+    category: 'lunch',
+    price: 14,
+    image: 'assets/img/lunch/sandwichDouble.webp',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit fuga aliquid modi rerum possimu.',
-    stock: 7,
+    stock: 8,
+    cuantity: 1,
+  },
+
+  {
+    id: 3,
+    title: 'Pescado y ensalada',
+    category: 'lunch',
+    price: 14,
+    image: 'assets/img/lunch/fish-and-salad.jpg',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit fuga aliquid modi rerum possimu.',
+    stock: 0,
+    cuantity: 1,
+  },
+
+  {
+    id: 4,
+    title: 'Batido de banana',
+    category: 'shakes',
+    price: 7,
+    image: 'assets/img/milkshake/banana-milkshake.webp',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit fuga aliquid modi rerum possimu.',
+    stock: 12,
+    cuantity: 1,
+  },
+
+  {
+    id: 5,
+    title: 'Batido de Chocolate',
+    category: 'shakes',
+    price: 9,
+    image: 'assets/img/milkshake/chocolate-milkshake-twin-bar.jpg',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit fuga aliquid modi rerum possimu.',
+    stock: 4,
     cuantity: 1,
   },
 ];
@@ -140,6 +178,26 @@ const updateCart = ()=> {
 
         updateCart()
       }
+
+
+      radioFilter.forEach((radio) => {
+        radio.addEventListener("click", (event)=> {
+          let categ = event.currentTarget.dataset.id;
+
+          let filterMenu = menu.filter((itemMenu)=> {
+            if(itemMenu.category === categ) {
+              return itemMenu
+            }
+          });
+
+          if (categ === "all") {
+            showMenu(menu);
+          }else {
+            showMenu(filterMenu);
+          }
+
+        });
+      });
 
 
 
